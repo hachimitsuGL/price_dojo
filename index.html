@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <title>プライス道場</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tools.css">
+  <link rel="icon" type="image/x-icon" href="images/icon.png">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1>
+        <img src="images/logo.png" class="logo">
+      </h1>
+      <div class="header-buttons">
+        <button type="button" class="header-button" data-role="illustrate">ゲーム説明</button>
+        <button type="button" class="header-button" data-role="login">ログイン</button>
+        <button type="button" class="header-button" data-role="signon">新規登録</button>
+      </div>
+    </header>
+    <main>
+      <div class="left">
+        <div class="left-content">
+          <div class="product-info">
+            <div class="product-source">
+              <h3 data-type="product-source"></h3>
+            </div>
+            <h2 data-type="product-name">「ニューゲーム」ボタンを押して、ゲームを開始してください。</h2>
+            <div class="product-imagediv">
+              <img data-type="product-image">
+              <button class="button-newgame">ニューゲーム</button>
+            </div>
+          </div>
+          <div class="user-input">
+            <div>
+              <div class="input-buttons">
+                <button class="input-button num" id="input-button7" data-role="input-7">7</button>
+                <button class="input-button num" id="input-button8" data-role="input-8">8</button>
+                <button class="input-button num" id="input-button9" data-role="input-9">9</button>
+                <button class="input-button num" id="input-button4" data-role="input-4">4</button>
+                <button class="input-button num" id="input-button5" data-role="input-5">5</button>
+                <button class="input-button num" id="input-button6" data-role="input-6">6</button>
+                <button class="input-button num" id="input-button1" data-role="input-1">1</button>
+                <button class="input-button num" id="input-button2" data-role="input-2">2</button>
+                <button class="input-button num" id="input-button3" data-role="input-3">3</button>
+                <button class="input-button clear" id="input-buttonc" data-role="input-c">C</button>
+                <button class="input-button num" id="input-button0" data-role="input-0">0</button>
+              </div>
+              <div class="submit-input">
+                <p>あなたの想定している価格は...</p>
+                <input type="text" class="input-price">
+                <button class="input-button commit" id="input-buttoncommit" data-role="commit">提出</button>
+              </div>
+              <div class="time-left">
+                <p data-type="time-left" class="time-left-num">100s</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="right">
+        <div class="right-content">
+          <div class="rank-list">
+            <div class="ranktop1"><span class="top1">1位</span><span
+                class="rank-list-username ranktop1">SOMEBODY</span><span
+                class="rank-list-rank ranktop1">S+(2500)</span><span class="rank-list-numofplays ranktop1"></span><span
+                class="rank-list-accuracy ranktop1">100%</span></div>
+            <table class="ranktop2-10">
+              <tr>
+                <th>順位</th>
+                <th>ユーザー名</th>
+                <th>ランク（点数）</th>
+                <th>総プレー数</th>
+                <th>推測精度</th>
+              </tr>
+              <tr class="ranktop2">
+
+              </tr>
+              <tr class="ranktop3">
+
+              </tr>
+              <tr class="ranktop4">
+
+              </tr>
+              <tr class="ranktop5">
+
+              </tr>
+              <tr class="ranktop6">
+
+              </tr>
+              <tr class="ranktop7">
+
+              </tr>
+              <tr class="ranktop8">
+
+              </tr>
+              <tr class="ranktop9">
+
+              </tr>
+              <tr class="ranktop10">
+
+              </tr>
+            </table>
+          </div>
+
+          <div class="user-data">
+            <h2>自分のデータ</h2>
+            <div class="user-data-content">
+              <div>
+                <p><span class="login">ログイン</span>して自分のデータがチェックできる</p>
+                <ul class="data" style="display: none;">
+                  <li>
+                    総プレー数：<span class="num-plays"></span>
+                  </li>
+                  <li>
+                    平均推測精度：<span class="accuracy"></span>
+                  </li>
+                  <li>
+                    ランク点数：<span class="rank"></span>
+                  </li>
+                </ul>
+              </div>
+              <p class="rank-mark"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </main>
+    <footer>
+      <p>© 2026 プライス道場 All rights reserved.</p>
+
+    </footer>
+
+
+  </div>
+  <script src="js/newgame.js"></script>
+  <script src="js/buttons.js"></script>
+
+  <script src="js/ranklist.js"></script>
+  <script src="js/users.js"></script>
+  <script src="js/gameplay.js"></script>
+</body>
+
+
+
+</html>

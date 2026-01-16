@@ -1,0 +1,117 @@
+/*---- button共通 ----*/
+button {
+  border: none;
+  background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 2rem;
+  color: white;
+
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.button-newgame:hover {
+  transform: translate(-50%, -50%) translateY(-1px);
+}
+
+/*---- input共通 ----*/
+input {
+  border: none;
+  background-color: #f1f1f1;
+  box-shadow: 0px 3px 1px rgba(129,159,186, 0.5);
+  border-radius: 2rem;
+
+  padding: 0 0.25rem;
+}
+
+
+/*---- auth modal ----*/
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .5);
+  z-index: 9999;
+}
+
+.modal-backdrop.is-open {
+  display: flex;
+}
+
+.modal {
+  width: min(420px, 92vw);
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+.modal .field {
+  margin: 10px 0;
+}
+
+.modal label {
+  display: block;
+  font-size: 12px;
+  opacity: .8;
+  margin-bottom: 6px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.modal .actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+
+.modal .msg {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #b00020;
+  min-height: 1em;
+}
+.modal-close{
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal .btn {
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+
+.modal .btn.primary {
+  border-color: rgba(0, 0, 0, .35);
+  font-weight: 700;
+}
