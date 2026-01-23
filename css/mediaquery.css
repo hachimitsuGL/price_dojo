@@ -1,13 +1,80 @@
 @charset "UTF-8";
 @media screen and (max-width: 980px) {
-  main{
+
+  /* header */
+  header {
+    flex-wrap: wrap;
+    height: auto;
+    margin-bottom: 1vh;
+  }
+
+  /* main */
+  main {
     height: auto;
     width: 95%;
   }
-	.left{
+
+  .left {
     width: 100%;
   }
-  .right{
+
+  .right {
     width: 100%;
+  }
+
+  /* left */
+  .product-info h2 {
+    font-size: 1rem;
+  }
+
+  .product-info h2.is-long {
+    font-size: 0.95rem;
+  }
+
+  .product-info h2.is-very-long {
+    font-size: 0.9rem;
+  }
+
+
+  .time-left {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .button-newgame {
+    width: 65%;
+  }
+
+  .user-input>div {
+    gap: 1.6rem;
+  }
+
+  .submit-input {
+    max-width: 40%;
+    min-width: 40%;
+  }
+
+  .submit-input .input-price {
+    width: 10rem;
+  }
+
+  /* right */
+  .right .ranktop1 {
+    font-size: 1rem;
+  }
+  .rank-list{
+    font-size: 0.7rem;
+  }
+  .right .ranktop1 {
+    gap: 1rem;
+
+    margin-top: 0.5rem;
+  }
+
+  .top1 {
+    width: 2rem;
+    height: 2rem;
+
+    margin-top: 0.5rem;
   }
 }
