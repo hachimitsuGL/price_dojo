@@ -400,11 +400,3 @@ footer {
 
 
 
-@media screen and (max-width: 480px) {
-	.left{
-    width: 100%;
-  }
-  .right{
-    width: 100%;
-  }
-}
