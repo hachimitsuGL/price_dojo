@@ -10,7 +10,7 @@
 
   if (!priceInput || !commitBtn || !timeEl) return;
 
-  /** ===== 段位/计时/计分规则（你随时可改） =====
+  /** ===== 段位/计时/计分规则 =====
    * rankPoints：用户的 rank 点数（users sheet 的 rank 列）
    * time：该段位每题倒计时秒数
    * rewards：满足精度阈值 => 加分（从上到下匹配第一条）
@@ -22,38 +22,41 @@
       minRank: 0,
       time: 80,
       rewards: [
+        { minAcc: 98, pts: +250 },
         { minAcc: 90, pts: +150 },
         { minAcc: 80, pts: +80 },
         { minAcc: 70, pts: +30 },
         { minAcc: 50, pts: +20 },
       ],
-      penalty: null,
+      penalty: { belowAcc: 20, pts: -10 },
     },
     {
       name: "C",
       minRank: 500,
       time: 60,
       rewards: [
+        { minAcc: 98, pts: +250 },
         { minAcc: 90, pts: +150 },
         { minAcc: 80, pts: +80 },
         { minAcc: 70, pts: +30 },
         { minAcc: 50, pts: +20 },
       ],
-      penalty: { belowAcc: 30, pts: -40 },
+      penalty: { belowAcc: 30, pts: -25 },
     },
     {
       name: "C+",
       minRank: 750,
       time: 60,
       rewards: [
+        { minAcc: 98, pts: +220 },
         { minAcc: 90, pts: +140 },
         { minAcc: 80, pts: +70 },
         { minAcc: 70, pts: +25 },
         { minAcc: 50, pts: +15 },
       ],
       penalty: [
-        { belowAcc: 30, pts: -40 },
-        { belowAcc: 10, pts: -80 },
+        { belowAcc: 30, pts: -35 },
+        { belowAcc: 10, pts: -50 },
       ],
     },
     {
@@ -61,14 +64,15 @@
       minRank: 1000,
       time: 40,
       rewards: [
+        { minAcc: 98, pts: +190 },
         { minAcc: 90, pts: +135 },
         { minAcc: 80, pts: +65 },
         { minAcc: 70, pts: +20 },
         { minAcc: 50, pts: +10 },
       ],
       penalty: [
-        { belowAcc: 30, pts: -40 },
-        { belowAcc: 10, pts: -80 },
+        { belowAcc: 30, pts: -30 },
+        { belowAcc: 10, pts: -50 },
       ],
     },
     {
@@ -76,14 +80,15 @@
       minRank: 1500,
       time: 30,
       rewards: [
+        { minAcc: 98, pts: +180 },
         { minAcc: 90, pts: +130 },
         { minAcc: 80, pts: +60 },
         { minAcc: 70, pts: +15 },
         { minAcc: 50, pts: +5 },
       ],
       penalty: [
-        { belowAcc: 30, pts: -45 },
-        { belowAcc: 10, pts: -85 },
+        { belowAcc: 30, pts: -35 },
+        { belowAcc: 10, pts: -65 },
       ],
     },
     {
@@ -91,15 +96,16 @@
       minRank: 1750,
       time: 30,
       rewards: [
+        { minAcc: 98, pts: +150 },
         { minAcc: 90, pts: +100 },
         { minAcc: 80, pts: +50 },
         { minAcc: 70, pts: +10 },
         { minAcc: 50, pts: +5 },
       ],
       penalty: [
-        { belowAcc: 30, pts: -50 },
-        { belowAcc: 10, pts: -85 },
-        { belowAcc: 5, pts: -100 },
+        { belowAcc: 30, pts: -40 },
+        { belowAcc: 10, pts: -65 },
+        { belowAcc: 5, pts: -80 },
       ],
     },
     {
@@ -107,21 +113,23 @@
       minRank: 2000,
       time: 20,
       rewards: [
+        { minAcc: 98, pts: +150 },
         { minAcc: 90, pts: +50 },
         { minAcc: 80, pts: +30 },
         { minAcc: 70, pts: +10 },
       ],
       penalty: [
         { belowAcc: 30, pts: -50 },
-        { belowAcc: 10, pts: -85 },
-        { belowAcc: 5, pts: -100 },
+        { belowAcc: 10, pts: -65 },
+        { belowAcc: 5, pts: -80 },
       ],
     },
     {
       name: "S+",
-      minRank: 2000,
+      minRank: 2500,
       time: 15,
       rewards: [
+        { minAcc: 98, pts: +150 },
         { minAcc: 90, pts: +50 },
         { minAcc: 80, pts: +30 },
       ],
@@ -140,7 +148,6 @@
 
   function setSession(user) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
-    // 通知 users.js 刷新 UI（如果你愿意加监听）
     document.dispatchEvent(new CustomEvent("pd:userUpdated", { detail: user }));
   }
 
@@ -222,7 +229,6 @@
     return await jsonp(`${APPS_SCRIPT_URL}?${params.toString()}`);
   }
 
-  /** ===== 结果弹窗（不改 HTML） ===== */
   const resultBackdrop = document.createElement("div");
   resultBackdrop.className = "modal-backdrop";
   resultBackdrop.innerHTML = `

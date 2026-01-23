@@ -68,6 +68,8 @@ main {
   display: flex;
   justify-content: space-around;
   gap: 1vw;
+
+  flex-wrap: wrap;
 }
 
 /*----------- .left -----------*/
@@ -315,7 +317,11 @@ main {
 
 .top1 {
   background-color: var(--accent-color);
-  padding: 0.75rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
 }
 
@@ -394,80 +400,11 @@ footer {
 
 
 
-
-/* media query test */
-*, *::before, *::after { box-sizing: border-box; }
-
-.wrapper {
-  width: min(1200px, 100%);
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-main {
-  display: flex;
-  gap: 32px;
-  align-items: stretch;
-  flex-wrap: wrap;
-}
-
-.left, .right {
-  flex: 1 1 520px;
-  min-width: 320px;
-}
-
-
-.left-content, .right-content {
-  width: 100%;
-}
-@media (max-width: 1100px) {
-  main {
-    flex-direction: column;
-  }
-  .left, .right {
-    min-width: 0;
-  }
-}
-@media (max-width: 768px) {
-  .rank-list {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .ranktop1,
-  table.ranktop2-10 {
-    min-width: 560px;
-  }
-}
-@media (max-width: 480px) {
-  .user-input {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
-
-  .input-buttons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
-
-  .input-button {
+@media screen and (max-width: 480px) {
+	.left{
     width: 100%;
   }
-
-  .submit-input {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .input-price {
+  .right{
     width: 100%;
-  }
-
-  .time-left {
-    align-self: flex-end;
   }
 }
