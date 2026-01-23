@@ -396,35 +396,78 @@ footer {
 
 
 /* media query test */
-* { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; }
 
-main{
+.wrapper {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+main {
   display: flex;
-  gap: 16px;
+  gap: 32px;
   align-items: stretch;
+  flex-wrap: wrap;
 }
 
-.left, .right{
-  flex: 1 1 0;
-  min-width: 0;
+.left, .right {
+  flex: 1 1 520px;
+  min-width: 320px;
 }
 
-img{ max-width: 100%; height: auto; }
 
-@media (max-width: 900px){
-  main{
+.left-content, .right-content {
+  width: 100%;
+}
+@media (max-width: 1100px) {
+  main {
     flex-direction: column;
   }
-  .left, .right{
+  .left, .right {
+    min-width: 0;
+  }
+}
+@media (max-width: 768px) {
+  .rank-list {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ranktop1,
+  table.ranktop2-10 {
+    min-width: 560px;
+  }
+}
+@media (max-width: 480px) {
+  .user-input {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .input-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .input-button {
     width: 100%;
   }
 
-  .right-content, .rank-list{
-    overflow-x: auto;
+  .submit-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
-  .header-buttons{
-    flex-wrap: wrap;
-    gap: 8px;
+  .input-price {
+    width: 100%;
+  }
+
+  .time-left {
+    align-self: flex-end;
   }
 }
