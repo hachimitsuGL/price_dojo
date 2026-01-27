@@ -118,8 +118,8 @@
       nameEl.classList.remove("is-long", "is-very-long");
 
       const len = (name || "").length;
-      if (len >= 70) nameEl.classList.add("is-very-long");
-      else if (len >= 50) nameEl.classList.add("is-long");
+      if (len >= 100) nameEl.classList.add("is-very-long");
+      else if (len >= 60) nameEl.classList.add("is-long");
 
       if (img) {
         imgEl.src = img;

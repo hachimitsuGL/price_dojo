@@ -137,6 +137,7 @@ main {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  font-size: 1.1em;
 
   text-overflow: ellipsis;
   overflow: hidden;
@@ -148,7 +149,7 @@ main {
 }
 
 .product-info h2.is-very-long {
-  font-size: 0.84em;
+  font-size: 0.77em;
 }
 
 .product-imagediv {
@@ -313,6 +314,7 @@ main {
   gap: 3rem;
   justify-content: space-around;
   align-items: center;
+
 }
 
 .top1 {

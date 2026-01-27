@@ -23,6 +23,9 @@
   }
 
   /* left */
+  .user-input .input-buttons{
+    display: none;
+  }
   .product-info h2 {
     font-size: 1rem;
   }
