@@ -23,33 +23,32 @@
   }
 
   /* left */
-  .user-input .input-buttons{
+  .user-input .input-buttons {
     display: none;
   }
+
   .product-info h2 {
-    font-size: 1rem;
+    font-size: 1em;
+    width: 100%;
   }
 
   .product-info h2.is-long {
-    font-size: 0.95rem;
+    font-size: 0.8em;
   }
 
   .product-info h2.is-very-long {
-    font-size: 0.9rem;
+    font-size: 0.7em;
   }
 
 
-  .time-left {
-    width: 4rem;
-    height: 4rem;
-  }
+
 
   .button-newgame {
     width: 65%;
   }
 
   .user-input>div {
-    gap: 1.6rem;
+    gap: 3rem;
   }
 
   .submit-input {
@@ -58,20 +57,34 @@
   }
 
   .submit-input .input-price {
-    width: 10rem;
+    width: 12rem;
+  }
+
+  .time-left {
+    width: 4.5rem;
+    height: 4.5rem;
   }
 
   /* right */
   .right .ranktop1 {
     font-size: 1rem;
   }
-  .rank-list{
+
+  .right .rank-list {
     font-size: 0.7rem;
+    padding: 0.2rem 0;
+
+    max-height: 65%;
+    min-height: 65%;
   }
+
+  .right .rank-list table tr {
+    line-height: 1.5rem;
+  }
+
   .right .ranktop1 {
     gap: 1rem;
 
-    margin-top: 0.5rem;
   }
 
   .top1 {
@@ -80,4 +93,23 @@
 
     margin-top: 0.5rem;
   }
+
+  .user-data{
+  max-height: 30%;
+  min-height: 30%;
+}
+.user-data .user-data-content{
+  gap:1rem;
+}
+.user-data .user-data-content div{
+  width: 60%;
+  gap:0.1rem;
+}
+.right .user-data ul {
+  gap: 0.1rem;
+}
+.user-data .user-data-content .rank-mark{
+  width: 4rem;
+  height: 4rem;
+}
 }
