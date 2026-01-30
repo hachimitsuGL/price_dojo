@@ -2,7 +2,7 @@
 (() => {
   // 和 newgame.js 使用同一个 Spreadsheet
   const SPREADSHEET_ID = "1FXUs_MujumvuAfRag_uYK2iPlPUUjCl27p1bA1QytkE";
-  const USERS_SHEET_NAME = "users"; // 你的 users sheet 名称
+  const USERS_SHEET_NAME = "users";
 
   const root = document.querySelector(".right .rank-list");
   if (!root) return;
@@ -20,7 +20,6 @@
   const top1PlaysEl = root.querySelector(".ranktop1 .rank-list-numofplays");
   const top1AccEl = root.querySelector(".ranktop1 .rank-list-accuracy");
 
-  // 给用户一个“脚本确实运行了”的视觉反馈
   if (top1UserEl) top1UserEl.textContent = "Loading...";
   if (top1RankEl) top1RankEl.textContent = "-";
   if (top1PlaysEl) top1PlaysEl.textContent = "-";

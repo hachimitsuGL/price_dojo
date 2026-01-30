@@ -91,7 +91,6 @@
     width: 2rem;
     height: 2rem;
 
-    margin-top: 0.5rem;
   }
 
   .user-data{
@@ -103,6 +102,7 @@
 }
 .user-data .user-data-content div{
   width: 60%;
+  font-size: 0.87em;
   gap:0.1rem;
 }
 .right .user-data ul {
