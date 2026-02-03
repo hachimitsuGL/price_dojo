@@ -334,7 +334,11 @@
 
     if (!loggedIn) {
       lockDuringRound(false);
-      if (newGameBtn) newGameBtn.disabled = false;
+      if (newGameBtn) {
+        newGameBtn.style.display = "";
+        newGameBtn.disabled = false;
+        newGameBtn.textContent = "ニューゲーム";
+      }
       return;
     }
 
