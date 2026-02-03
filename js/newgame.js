@@ -108,7 +108,7 @@
       const priceStr = idxPrice >= 0 ? cellValue(row, idxPrice).trim() : "";
       const price = parsePriceToNumber(priceStr);
       if (!Number.isFinite(price) || price <= 0) {
-        throw new Error("题库缺少有效价格：请在题库 sheet 添加「価格」列并填入数字价格");
+        throw new Error("「価格」列に有効価格がない");
       }
 
       if (source) sourceEl.textContent = source;
