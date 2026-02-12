@@ -8,8 +8,7 @@
   if (!root) return;
 
   /** =====================
-   *  Top1（div）
-   *  HTML 里已经预留：
+   *  Top1（div）：
    *  - .rank-list-username.ranktop1
    *  - .rank-list-rank.ranktop1
    *  - .rank-list-numofplays.ranktop1
@@ -42,7 +41,7 @@
     if (!s) return "-";
     const n = toNumberLike(s, NaN);
     if (!Number.isFinite(n)) return s;
-    // 兼容：0~1 或 0~100
+    // 0~1 或 0~100
     const pct = n <= 1 ? n * 100 : n;
     return `${pct.toFixed(1)}%`;
   }
@@ -180,7 +179,6 @@
 
       const { cols, rows } = resp.table;
 
-      // 表头映射（按 label）
       const colIndex = {};
       (cols || []).forEach((c, i) => {
         const label = (c?.label || "").trim();
@@ -215,7 +213,6 @@
       if (top1PlaysEl) top1PlaysEl.textContent = "-";
       if (top1AccEl) top1AccEl.textContent = "-";
 
-      // 表格也填充为 "-"
       for (let pos = 2; pos <= 10; pos++) {
         const tr = root.querySelector(`tr.ranktop${pos}`);
         if (tr) fillRow(tr, pos, null);
@@ -223,16 +220,13 @@
     }
   }
 
-  // 给其他脚本用（提交后刷新）
   window.PD_refreshRankList = refreshRankList;
 
-  // 页面加载时刷新
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", refreshRankList);
   } else {
     refreshRankList();
   }
 
-  // 提交成绩后刷新（gameplay.js 会派发 pd:userUpdated）
   document.addEventListener("pd:userUpdated", () => refreshRankList());
 })();

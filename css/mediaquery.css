@@ -93,23 +93,28 @@
 
   }
 
-  .user-data{
-  max-height: 30%;
-  min-height: 30%;
-}
-.user-data .user-data-content{
-  gap:1rem;
-}
-.user-data .user-data-content div{
-  width: 60%;
-  font-size: 0.87em;
-  gap:0.1rem;
-}
-.right .user-data ul {
-  gap: 0.1rem;
-}
-.user-data .user-data-content .rank-mark{
-  width: 4rem;
-  height: 4rem;
-}
+  .user-data {
+    max-height: 30%;
+    min-height: 30%;
+    padding: 0 0.5rem;
+  }
+
+  .user-data .user-data-content {
+    gap: 1rem;
+  }
+
+  .user-data .user-data-content div {
+    width: 60%;
+    font-size: 0.87em;
+    gap: 0.1rem;
+  }
+
+  .right .user-data ul {
+    gap: 0.1rem;
+  }
+
+  .user-data .user-data-content .rank-mark {
+    width: 4rem;
+    height: 4rem;
+  }
 }

@@ -10,12 +10,7 @@
 
   if (!priceInput || !commitBtn || !timeEl) return;
 
-  /** ===== 段位/计时/计分规则 =====
-   * rankPoints：用户的 rank 点数（users sheet 的 rank 列）
-   * time：该段位每题倒计时秒数
-   * rewards：满足精度阈值 => 加分（从上到下匹配第一条）
-   * penalty：C 及以上：精度太低 => 扣分
-   */
+  /* ===== ランクに関するルール =====　*/
   const TIERS = [
     {
       name: "D",
@@ -198,7 +193,7 @@
     return 0;
   }
 
-  /** ===== JSONP 调 Apps Script ===== */
+  /** ===== JSONP Apps Script ===== */
   function jsonp(url, timeoutMs = 12000) {
     return new Promise((resolve, reject) => {
       const cbName = `__pd_cb_${Date.now()}_${Math.random().toString(16).slice(2)}`;

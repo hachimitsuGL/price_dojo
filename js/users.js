@@ -1,7 +1,7 @@
 // js/users.js
 (() => {
   /** ========= 配置 ========= */
-  const STORAGE_KEY = "pd_user"; // 登录态
+  const STORAGE_KEY = "pd_user";
   const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz6lMcYTOJYsdxjmSFHlH90RixRU68lXzPqTXfBzOQ0QOp28aD3iuxubOsanht3Gqz0jA/exec";    // TODO: 粘贴 Apps Script Web App URL（.../exec）
 
   /** ========= Header Buttons ========= */

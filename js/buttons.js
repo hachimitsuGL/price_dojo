@@ -66,7 +66,7 @@
   });
 })();
 
-/* ===== ゲーム説明（illustrate）モーダル ===== */
+/* ----- ゲーム説明（illustrate）モーダル ----- */
 (() => {
   const illustrateBtn = document.querySelector('[data-role="illustrate"]');
   if (!illustrateBtn) return;
