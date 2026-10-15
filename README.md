@@ -14,6 +14,10 @@
 
 HTML / CSS / JavaScript / Google スプレッドシート / Google Apps Script
 
+## 商品データの更新
+
+Google Apps Scriptの時間主導型トリガーで毎日定期的に処理を実行し、楽天・Yahoo!のAPIから商品情報をランダムに取得して、Google スプレッドシートに保存しています。
+
 ## 起動方法
 
 プロジェクトのフォルダで次のコマンドを実行し、ブラウザで `http://localhost:8000` を開きます。
